@@ -17,7 +17,7 @@ def calc(r):
 
 
 fig, (ax, bx) = plt.subplots(2, 1)
-fig.subplots_adjust(bottom=0.25)
+fig.subplots_adjust(bottom=0.2,hspace=0.5)
 
 fig.canvas.manager.set_window_title("Logistic map")
 
@@ -49,7 +49,7 @@ def update(val):
 slider.on_changed(update)
 
 
-# Bifurkációs diagram számítása
+# Calculation of the bifurcation diagram
 r_values = np.linspace(0, 5, 6001)
 x = np.full_like(r_values, x0)
 
@@ -63,7 +63,7 @@ for k in range(100):
         r_points.append(r_values)
         x_points.append(x.copy())
 
-# Összes pont egyetlen kirajzolással
+# plot
 bx.scatter(
     np.concatenate(r_points),
     np.concatenate(x_points),
